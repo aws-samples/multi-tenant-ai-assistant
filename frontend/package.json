@@ -1,0 +1,39 @@
+{
+  "name": "multi-tenant-ai-assistant",
+  "author": {
+    "name": "Florian Mair",
+    "email": "flomair@amazon.at"
+  },
+  "contributors": [
+    {
+      "name": "Ulrich Hinze",
+      "email": "uhinze@amazon.de"
+    }
+  ],
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@aws-amplify/ui-react": "^6.1.4",
+    "@cloudscape-design/components": "^3.0.555",
+    "@cloudscape-design/global-styles": "^1.0.23",
+    "aws-amplify": "^6.0.18",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "typescript": "^5"
+  }
+}
