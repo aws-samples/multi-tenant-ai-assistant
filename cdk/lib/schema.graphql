@@ -1,0 +1,34 @@
+type AnswerChunk @aws_iam @aws_cognito_user_pools {
+  answerId: ID
+  answerChunk: String
+  answerStatus: String
+}
+
+type Confirmation @aws_cognito_user_pools {
+  answerId: ID
+}
+
+type Mutation @aws_iam @aws_cognito_user_pools {
+  newPrompt(
+    answerId: ID!
+    prompt: String!
+    answerStatus: String
+  ) : Confirmation
+  newAnswerChunk(
+    answerId: ID!
+    answerStatus: String!
+    answerChunk: String!
+  ): AnswerChunk
+}
+
+type Query {}
+
+type Subscription @aws_cognito_user_pools {
+  answerUpdate(answerId: ID!): AnswerChunk
+    @aws_subscribe(mutations: ["newAnswerChunk"])
+}
+schema @aws_iam @aws_cognito_user_pools {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
